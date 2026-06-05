@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>W.I.L.L. — Where Interested Leads Link</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- SCREEN 1 — DIRECTORY -->
+<div class="screen active" id="screen-directory">
+
+  <div class="dir-header">
+    <a class="logo" href="#">W.I.L.L.<small>Where Interested Leads Link</small></a>
+    <div class="search-wrap">
+      <input type="text" placeholder="Search businesses, services, locations…"/>
+    </div>
+    <div class="cat-bar">
+      <div class="cat-pill active">All</div>
+      <div class="cat-pill">Design</div>
+      <div class="cat-pill">Marketing</div>
+      <div class="cat-pill">Tech</div>
+      <div class="cat-pill">Finance</div>
+      <div class="cat-pill">Health</div>
+      <div class="cat-pill">Legal</div>
+      <div class="cat-pill">Food</div>
+      <div class="cat-pill">Home</div>
+      <div class="cat-pill">Music</div>
+    </div>
+    <div id="dir-header-btns">
+      <button class="btn-ghost" onclick="showProfileCheck()">Sign In</button>
+      <button class="btn-primary" onclick="showProfileCheck()">Get Started</button>
+    </div>
+  </div>
+
+  <div class="dir-split">
+    <div class="dir-left">
+      <div class="map-panel">
+        <div class="map-placeholder">
+          <div class="map-road h main" style="top:30%"></div>
+          <div class="map-road h main" style="top:55%"></div>
+          <div class="map-road h main" style="top:75%"></div>
+          <div class="map-road h" style="top:20%"></div>
+          <div class="map-road h" style="top:42%"></div>
+          <div class="map-road h" style="top:65%"></div>
+          <div class="map-road h" style="top:85%"></div>
+          <div class="map-road v main" style="left:25%"></div>
+          <div class="map-road v main" style="left:50%"></div>
+          <div class="map-road v main" style="left:72%"></div>
+          <div class="map-road v" style="left:15%"></div>
+          <div class="map-road v" style="left:37%"></div>
+          <div class="map-road v" style="left:62%"></div>
+          <div class="map-road v" style="left:85%"></div>
+          <div class="map-pin selected" style="left:38%;top:42%" onclick="selectBizFromMap(0)">
+            <div class="pin-dot design selected-pin"><span class="pin-icon">🎨</span><span class="pin-rating">5.0</span></div>
+            <div class="pin-label">Artworqq Studio</div>
+          </div>
+          <div class="map-pin" style="left:52%;top:35%" onclick="selectBizFromMap(1)">
+            <div class="pin-dot tech"><span class="pin-icon">💻</span><span class="pin-rating">4.9</span></div>
+            <div class="pin-label">Pixel & Code Co.</div>
+          </div>
+          <div class="map-pin" style="left:62%;top:50%" onclick="selectBizFromMap(2)">
+            <div class="pin-dot default"><span class="pin-icon">📣</span><span class="pin-rating">4.7</span></div>
+            <div class="pin-label">Loud Signal Agency</div>
+          </div>
+          <div class="map-pin" style="left:44%;top:62%" onclick="selectBizFromMap(3)">
+            <div class="pin-dot default"><span class="pin-icon">📸</span><span class="pin-rating">4.8</span></div>
+            <div class="pin-label">Frame & Focus DTW</div>
+          </div>
+          <div class="map-pin" style="left:28%;top:55%" onclick="selectBizFromMap(4)">
+            <div class="pin-dot food"><span class="pin-icon">🎵</span><span class="pin-rating">5.0</span></div>
+            <div class="pin-label">Studio 313</div>
+          </div>
+          <div class="map-pin" style="left:70%;top:38%" onclick="selectBizFromMap(5)">
+            <div class="pin-dot default"><span class="pin-icon">⚖️</span><span class="pin-rating">4.6</span></div>
+            <div class="pin-label">Metro Legal Group</div>
+          </div>
+          <div class="map-pin" style="left:56%;top:68%" onclick="selectBizFromMap(6)">
+            <div class="pin-dot fitness"><span class="pin-icon">🏋️</span><span class="pin-rating">4.5</span></div>
+            <div class="pin-label">Iron District Gym</div>
+          </div>
+        </div>
+        <div class="map-controls">
+          <button class="map-btn">+</button>
+          <button class="map-btn">−</button>
+          <button class="map-btn">⊕</button>
+        </div>
+        <div class="map-label">© W.I.L.L. · Powered by Google Maps</div>
+      </div>
+
+      <div class="dir-list">
+        <div class="dir-list-header">Showing <span>7 businesses</span> near Detroit, MI</div>
+        <div class="biz-card selected" onclick="selectBiz(0, this)">
+          <div class="biz-card-body">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:6px;margin-bottom:2px;">
+              <div class="biz-card-name">Artworqq Studio</div>
+              <span class="gmb-badge">✓ GMB</span>
+            </div>
+            <div class="biz-card-meta">
+              <span class="biz-stars">★★★★★</span>
+              <span class="biz-rating">5.0 (128)</span>
+              <span class="biz-dot">·</span>
+              <span class="biz-price">$$</span>
+              <span class="biz-dot">·</span>
+              <span class="biz-rating">Graphic Design</span>
+            </div>
+            <div class="biz-desc">Detroit-based design studio specializing in brand identity and digital media.</div>
+            <div class="biz-card-footer">
+              <span class="biz-location" style="margin:0">0.3 mi · Open now</span>
+              <button class="btn-quick-connect" onclick="event.stopPropagation();showProfileCheck()">⚡ Connect</button>
+            </div>
+          </div>
+          <div class="biz-card-thumb">🎨</div>
+        </div>
+        <div class="biz-card" onclick="selectBiz(1, this)">
+          <div class="biz-card-body">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:6px;margin-bottom:2px;">
+              <div class="biz-card-name">Pixel & Code Co.</div>
+              <span class="gmb-badge">✓ GMB</span>
+            </div>
+            <div class="biz-card-meta">
+              <span class="biz-stars">★★★★★</span>
+              <span class="biz-rating">4.9 (87)</span>
+              <span class="biz-dot">·</span>
+              <span class="biz-price">$$$</span>
+              <span class="biz-dot">·</span>
+              <span class="biz-rating">Web Development</span>
+            </div>
+            <div class="biz-desc">Full stack web development for startups and small businesses.</div>
+            <div class="biz-card-footer">
+              <span class="biz-location" style="margin:0">0.8 mi · Open now</span>
+              <button class="btn-quick-connect" onclick="event.stopPropagation();showProfileCheck()">⚡ Connect</button>
+            </div>
+          </div>
+          <div class="biz-card-thumb">💻</div>
+        </div>
+        <div class="biz-card" onclick="selectBiz(2, this)">
+          <div class="biz-card-body">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:6px;margin-bottom:2px;">
+              <div class="biz-card-name">Loud Signal Agency</div>
+              <span class="gmb-badge">✓ GMB</span>
+            </div>
+            <div class="biz-card-meta">
+              <span class="biz-stars">★★★★☆</span>
+              <span class="biz-rating">4.7 (203)</span>
+              <span class="biz-dot">·</span>
+              <span class="biz-price">$$</span>
+              <span class="biz-dot">·</span>
+              <span class="biz-rating">Marketing</span>
+            </div>
+            <div class="biz-desc">Social media strategy and content creation for brands that want to be heard.</div>
+            <div class="biz-card-footer">
+              <span class="biz-location" style="margin:0">1.1 mi · Open now</span>
+              <button class="btn-quick-connect" onclick="event.stopPropagation();showProfileCheck()">⚡ Connect</button>
+            </div>
+          </div>
+          <div class="biz-card-thumb">📣</div>
+        </div>
+        <div class="biz-card" onclick="selectBiz(3, this)">
+          <div class="biz-card-body">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:6px;margin-bottom:2px;">
+              <div class="biz-card-name">Frame & Focus DTW</div>
+              <span class="gmb-badge">✓ GMB</span>
+            </div>
+            <div class="biz-card-meta">
+              <span class="biz-stars">★★★★★</span>
+              <span class="biz-rating">4.8 (64)</span>
+              <span class="biz-dot">·</span>
+              <span class="biz-price">$$$</span>
+              <span class="biz-dot">·</span>
+              <span class="biz-rating">Photography</span>
+            </div>
+            <div class="biz-desc">Professional photography and videography for brands and events.</div>
+            <div class="biz-card-footer">
+              <span class="biz-location" style="margin:0">1.4 mi · Closed</span>
+              <button class="btn-quick-connect" onclick="event.stopPropagation();showProfileCheck()">⚡ Connect</button>
+            </div>
+          </div>
+          <div class="biz-card-thumb">📸</div>
+        </div>
+        <div class="biz-card" onclick="selectBiz(4, this)">
+          <div class="biz-card-body">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:6px;margin-bottom:2px;">
+              <div class="biz-card-name">Studio 313</div>
+            </div>
+            <div class="biz-card-meta">
+              <span class="biz-stars">★★★★★</span>
+              <span class="biz-rating">5.0 (41)</span>
+              <span class="biz-dot">·</span>
+              <span class="biz-price">$$</span>
+              <span class="biz-dot">·</span>
+              <span class="biz-rating">Music & Recording</span>
+            </div>
+            <div class="biz-desc">Recording studio and music production house rooted in the Detroit sound.</div>
+            <div class="biz-card-footer">
+              <span class="biz-location" style="margin:0">1.7 mi · Open now</span>
+              <button class="btn-quick-connect" onclick="event.stopPropagation();showProfileCheck()">⚡ Connect</button>
+            </div>
+          </div>
+          <div class="biz-card-thumb">🎵</div>
+        </div>
+        <div class="biz-card" onclick="selectBiz(5, this)">
+          <div class="biz-card-body">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:6px;margin-bottom:2px;">
+              <div class="biz-card-name">Metro Legal Group</div>
+              <span class="gmb-badge">✓ GMB</span>
+            </div>
+            <div class="biz-card-meta">
+              <span class="biz-stars">★★★★☆</span>
+              <span class="biz-rating">4.6 (92)</span>
+              <span class="biz-dot">·</span>
+              <span class="biz-price">$$$$</span>
+              <span class="biz-dot">·</span>
+              <span class="biz-rating">Legal</span>
+            </div>
+            <div class="biz-desc">Business law specialists serving Detroit entrepreneurs and startups.</div>
+            <div class="biz-card-footer">
+              <span class="biz-location" style="margin:0">2.0 mi · Open now</span>
+              <button class="btn-quick-connect" onclick="event.stopPropagation();showProfileCheck()">⚡ Connect</button>
+            </div>
+          </div>
+          <div class="biz-card-thumb">⚖️</div>
+        </div>
+        <div class="biz-card" onclick="selectBiz(6, this)">
+          <div class="biz-card-body">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:6px;margin-bottom:2px;">
+              <div class="biz-card-name">Iron District Gym</div>
+              <span class="gmb-badge">✓ GMB</span>
+            </div>
+            <div class="biz-card-meta">
+              <span class="biz-stars">★★★★☆</span>
+              <span class="biz-rating">4.5 (310)</span>
+              <span class="biz-dot">·</span>
+              <span class="biz-price">$$</span>
+              <span class="biz-dot">·</span>
+              <span class="biz-rating">Health & Fitness</span>
+            </div>
+            <div class="biz-desc">Serious iron gym with personal training and nutrition coaching.</div>
+            <div class="biz-card-footer">
+              <span class="biz-location" style="margin:0">2.3 mi · Open now</span>
+              <button class="btn-quick-connect" onclick="event.stopPropagation();showProfileCheck()">⚡ Connect</button>
+            </div>
+          </div>
+          <div class="biz-card-thumb">🏋️</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dir-detail" id="dir-detail">
+      <div class="detail-placeholder" id="detail-placeholder">
+        <span>🗺️</span>
+        <div>Select a business to see details</div>
+      </div>
+      <div class="detail-inner active" id="detail-inner">
+        <div class="detail-photos">
+          <div class="detail-photo main" id="detail-emoji">🎨</div>
+          <div class="detail-photo sm">✏️</div>
+          <div class="detail-photo sm">🖼️</div>
+        </div>
+        <div class="detail-body">
+          <div class="detail-name" id="detail-name">Artworqq Studio</div>
+          <div class="detail-cat" id="detail-cat">Graphic Design · Concept Art</div>
+          <div class="detail-meta">
+            <span class="detail-stars" id="detail-stars">★★★★★</span>
+            <span class="detail-rating" id="detail-rating">5.0 · 128 reviews</span>
+            <span class="gmb-badge">✓ GMB Verified</span>
+          </div>
+          <div class="detail-actions" style="margin-top:0;margin-bottom:14px;">
+            <button class="btn-detail-connect" onclick="showProfileCheck()">⚡ Connect on W.I.L.L.</button>
+            <button class="btn-detail-web">Website ↗</button>
+          </div>
+          <div class="detail-row" id="detail-location">📍 Detroit, MI · 0.3 mi away</div>
+          <div class="detail-row" id="detail-hours">🕐 <span class="open">Open now</span> · Closes 8 PM</div>
+          <div class="detail-row" id="detail-price">💰 $$ · Mid-range</div>
+          <div class="detail-desc" id="detail-desc">Detroit-based design studio specializing in brand identity, concept art, and digital media. Trusted by 50+ local businesses.</div>
+          <div class="detail-divider"></div>
+          <div class="detail-section-title">About this business</div>
+          <div class="detail-row">✓ Google My Business Verified</div>
+          <div class="detail-row">✓ Active on W.I.L.L.</div>
+          <div class="detail-row">✓ Accepts direct connections</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-status"><div class="status-dot"></div> All systems live</div>
+    <div class="footer-links"><a href="#">About</a><a href="#">Terms</a><a href="#">Privacy</a><a href="#">Support</a><a href="#">For Business</a></div>
+    <div>© 2026 W.I.L.L. — Where Interested Leads Link</div>
+  </footer>
+</div>
+
+
+<!-- MODAL — PROFILE CHECK -->
+<div class="screen" id="screen-profilecheck">
+  <div class="modal">
+    <div class="modal-icon">🔗</div>
+    <h2>Ready to Connect?</h2>
+    <p>To swipe and connect with businesses you need a W.I.L.L. profile. Pick your type to get started — it only takes a minute.</p>
+    <div class="modal-actions">
+      <button class="btn-biz" onclick="goToBuilder('biz')">🏢 I'm a Business</button>
+      <button class="btn-cust" onclick="goToBuilder('cust')">👤 I'm a Customer</button>
+    </div>
+    <button class="modal-cancel" onclick="goBack()">← Back to directory</button>
+  </div>
+</div>
+
+
+<!-- SCREEN — CARD BUILDER -->
+<div class="screen" id="screen-builder">
+  <div class="builder-wrap">
+    <button class="builder-back" onclick="showProfileCheck()">← Back</button>
+    <div class="builder-eyebrow" id="builder-type-label">Business Profile</div>
+    <div class="builder-title">Build Your Card</div>
+    <div class="builder-sub">This becomes your public page on W.I.L.L. Your starter products load automatically the moment you publish.</div>
+    <div class="tcg-card">
+      <div class="tcg-top">
+        <span class="tcg-type" id="preview-type">BUSINESS</span>
+        <span class="tcg-stars">★★★★★</span>
+      </div>
+      <div class="tcg-img-row" id="preview-emoji">🏢</div>
+      <div class="tcg-name" id="preview-name">Your Business Name</div>
+      <div class="tcg-cat" id="preview-category">Category</div>
+      <div class="tcg-divider"></div>
+      <div class="tcg-bio" id="preview-bio">Your description will appear here…</div>
+      <div class="tcg-stats">
+        <div class="tcg-stat"><div class="tcg-stat-val">0</div><div class="tcg-stat-lbl">Links</div></div>
+        <div class="tcg-stat"><div class="tcg-stat-val">Auto</div><div class="tcg-stat-lbl">Products</div></div>
+        <div class="tcg-stat"><div class="tcg-stat-val">New</div><div class="tcg-stat-lbl">Status</div></div>
+      </div>
+    </div>
+    <div class="field-group">
+      <label class="field-label">Business / Your Name</label>
+      <input class="field-input" type="text" placeholder="e.g. Artworqq Studio" oninput="updatePreview('name',this.value)"/>
+    </div>
+    <div class="field-row">
+      <div class="field-group">
+        <label class="field-label">Category</label>
+        <input class="field-input" type="text" placeholder="e.g. Graphic Design" oninput="updatePreview('category',this.value)"/>
+      </div>
+      <div class="field-group">
+        <label class="field-label">Location</label>
+        <input class="field-input" type="text" placeholder="Detroit, MI"/>
+      </div>
+    </div>
+    <div class="field-group">
+      <label class="field-label">Description</label>
+      <textarea class="field-input" rows="3" placeholder="What do you do or what do you need?" style="resize:none;" oninput="updatePreview('bio',this.value)"></textarea>
+    </div>
+    <div class="field-group">
+      <label class="field-label">Google My Business <span style="color:var(--muted);font-weight:400;">(required for businesses)</span></label>
+      <div class="gmb-btn" onclick="this.innerHTML='✓ &nbsp;Connected to Google My Business';this.style.background='rgba(34,197,94,0.14)';this.style.borderStyle='solid';">
+        🔗 &nbsp;Connect Google My Business
+      </div>
+    </div>
+    <button class="builder-submit" onclick="goToApp()">🚀 Publish My Card & Go Discover</button>
+  </div>
+</div>
+
+
+<!-- SCREEN — APP (logged in) -->
+<div class="screen" id="screen-app">
+
+  <div class="app-header">
+    <a class="logo" href="#">W.I.L.L.<small>Where Interested Leads Link</small></a>
+    <nav>
+      <a class="active" onclick="switchView('links',this)">Lead Links <span style="background:var(--accent);color:#000;font-size:0.56rem;font-weight:800;padding:1px 6px;border-radius:4px;margin-left:3px;">10</span></a>
+      <a onclick="switchView('discover',this)">Discover</a>
+      <a onclick="switchView('willidcards',this)">W.I.L.L. ID Cards</a>
+      <a onclick="switchView('matches',this)">Matches</a>
+      <a onclick="switchView('messages',this)">Messages</a>
+      <a onclick="switchView('market',this)">Market</a>
+      <a onclick="switchView('profile',this)">Profile Card</a>
+    </nav>
+    <div class="header-right">
+      <div class="token-badge">240 Tokens</div>
+      <button class="btn-primary">+ Buy Tokens</button>
+    </div>
+  </div>
+
+  <div class="app-body-wrap">
+    <aside id="app-sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">Menu</div>
+        <a class="sidebar-item active" onclick="switchView('links',null)"><span class="icon">🔗</span> Lead Links <span style="margin-left:auto;background:var(--accent);color:#000;font-size:0.56rem;font-weight:800;padding:1px 5px;border-radius:10px;">10</span></a>
+        <a class="sidebar-item" onclick="switchView('discover',null)"><span class="icon">🔍</span> Discover</a>
+        <a class="sidebar-item" onclick="switchView('willidcards',null)"><span class="icon">🪪</span> W.I.L.L. ID Cards</a>
+        <a class="sidebar-item" onclick="switchView('matches',null)"><span class="icon">🤝</span> Matches</a>
+        <a class="sidebar-item" onclick="switchView('messages',null)"><span class="icon">💬</span> Messages</a>
+        <a class="sidebar-item" onclick="switchView('market',null)"><span class="icon">🛒</span> Market</a>
+        <a class="sidebar-item" onclick="goBack()"><span class="icon">🗺️</span> Map</a>
+        <a class="sidebar-item" onclick="switchView('insights',null)"><span class="icon">📊</span> Insights</a>
+        <a class="sidebar-item" onclick="switchView('profile',null)"><span class="icon">👤</span> Profile Card</a>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-section">
+        <div class="sidebar-label">My Business</div>
+        <a class="sidebar-item"><span class="icon">🏪</span> My Page</a>
+        <a class="sidebar-item"><span class="icon">📦</span> My Products</a>
+        <a class="sidebar-item"><span class="icon">🎯</span> Campaigns</a>
+        <a class="sidebar-item"><span class="icon">⭐</span> Reviews</a>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div class="urgency-panel">
+        <h4>⚡ GROW YOUR BUSINESS</h4>
+        <div class="urgency-offer"><strong>Sell Digital Products 24/7</strong>Add products to your page and earn while you sleep.</div>
+        <div class="urgency-offer"><strong>Get Gold Membership</strong>Make 10x more connections every month.</div>
+        <div class="urgency-offer"><strong>Go Premium</strong>Powerful design. Winning copy. Instant credibility.</div>
+        <div class="urgency-offer"><strong>Boost to Front Page</strong>Put your business in front of everyone right now.</div>
+        <div class="urgency-offer"><strong>Add a Promo Video</strong>Let customers see you before they swipe.</div>
+      </div>
+    </aside>
+
+    <button class="sidebar-toggle" id="sidebar-toggle" onclick="toggleSidebar()" title="Toggle sidebar">‹</button>
+
+    <main>
+
+      <!-- DISCOVER VIEW -->
+      <div class="view" id="view-discover">
+        <div class="swipe-deck-wrap">
+          <div class="swipe-counter" id="swipe-counter">1 / 7</div>
+          <div class="swipe-deck" id="swipe-deck"></div>
+          <div class="swipe-btns">
+            <button class="swipe-btn pass" onclick="swipeCard('left')" title="Pass">✕</button>
+            <button class="swipe-btn superlike" onclick="swipeCard('up')" title="Super Connect">⚡</button>
+            <button class="swipe-btn connect" onclick="swipeCard('right')" title="Connect">♥</button>
+          </div>
+          <div class="swipe-hint">← Pass &nbsp;&nbsp; Drag or tap buttons &nbsp;&nbsp; Connect →</div>
+        </div>
+      </div>
+
+      <!-- W.I.L.L. ID CARDS VIEW -->
+      <div class="view" id="view-willidcards">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
+          <div class="view-title">W.I.L.L. ID Cards</div>
+        </div>
+        <div class="view-sub">Auto-generated by W.I.L.L. when the map pulls a business. These are not user-created — they're the platform's own verified business cards.</div>
+        <div class="will-id-feed" id="will-id-feed">
+          <div class="will-id-feed-empty">
+            <span>🪪</span>
+            <p>Loading cards from the map…</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- OTHER VIEWS -->
+      <div class="view" id="view-matches">
+        <div class="view-title">Matches</div>
+        <div class="view-sub">Businesses and customers who swiped right on you too.</div>
+      </div>
+
+      <div class="view" id="view-profile">
+        <div class="view-title">My Profile</div>
+        <div class="view-sub">Your public business card on W.I.L.L.</div>
+      </div>
+
+      <div class="view" id="view-messages">
+        <div class="view-title">Messages</div>
+        <div class="view-sub">Your active conversations. Each message costs tokens.</div>
+      </div>
+
+      <div class="view" id="view-market">
+        <div class="view-title">Market</div>
+        <div class="view-sub">Buy, sell, and trade profiles using W.I.L.L. currency.</div>
+      </div>
+
+      <div class="view" id="view-insights">
+        <div class="view-title">Insights</div>
+        <div class="view-sub">Analytics for your business page.</div>
+      </div>
+
+      <div class="view active" id="view-links">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
+          <div class="view-title">Links</div>
+          <a href="#" style="font-size:0.78rem;color:var(--accent);text-decoration:none;">How it works →</a>
+        </div>
+        <div class="view-sub">Your active connections and product sales. Every link is a real opportunity.</div>
+        <div class="alert-bar">⚡ You have <strong>10 active links</strong> waiting. <a>Activate them now</a> to keep your momentum going.</div>
+        <div class="stats-bar">
+          <div class="stat-cell"><div class="stat-label">All Time</div><div class="stat-value">10</div></div>
+          <div class="stat-cell"><div class="stat-label">Links</div><div class="stat-value">10</div></div>
+          <div class="stat-cell"><div class="stat-label">To Activate</div><div class="stat-value">10</div></div>
+          <div class="stat-cell"><div class="stat-label">Total Earned</div><div class="stat-value green">$130.90</div></div>
+        </div>
+        <table class="links-table">
+          <thead><tr><th>Link Info</th><th>Date</th><th>Source</th><th>Total</th><th>Action</th><th>Your Profit</th></tr></thead>
+          <tbody>
+            <tr class="link-row-new"><td><span class="new-badge">NEW</span><strong>Goal Setting Guide</strong><div class="link-id">LNK-CGZY3IGX1PU5</div></td><td>2026-06-02 07:00</td><td><div class="source-tag"><span class="source-dot"></span> W.I.L.L. Market</div></td><td>$10.99</td><td><button class="btn-action">Activate</button><div class="earn-note">Earn <span>$4.99</span></div></td><td><div class="profit-pill">$4.99</div></td></tr>
+            <tr class="link-row-new"><td><span class="new-badge">NEW</span><strong>TikTok UGC Starter Kit</strong><div class="link-id">LNK-ZI63QNNF71GO</div></td><td>2026-06-02 04:30</td><td><div class="source-tag"><span class="source-dot"></span> W.I.L.L. Market</div></td><td>$10.99</td><td><button class="btn-action">Activate</button><div class="earn-note">Earn <span>$4.99</span></div></td><td><div class="profit-pill">$4.99</div></td></tr>
+            <tr class="link-row-new"><td><span class="new-badge">NEW</span><strong>AI Grocery Savings Guide</strong><div class="link-id">LNK-GM4WCUOZM0EW</div></td><td>2026-06-02 01:15</td><td><div class="source-tag"><span class="source-dot"></span> W.I.L.L. Market</div></td><td>$10.99</td><td><button class="btn-action">Activate</button><div class="earn-note">Earn <span>$4.99</span></div></td><td><div class="profit-pill">$4.99</div></td></tr>
+            <tr class="link-row-new"><td><span class="new-badge">NEW</span><strong>She Rises Quote Book</strong><div class="link-id">LNK-HWLFGSFSOO4D</div></td><td>2026-06-02 00:45</td><td><div class="source-tag"><span class="source-dot"></span> W.I.L.L. Market</div></td><td>$12.99</td><td><button class="btn-action">Activate</button><div class="earn-note">Earn <span>$5.79</span></div></td><td><div class="profit-pill">$5.79</div></td></tr>
+            <tr><td><strong>New Pup Guide</strong><div class="link-id">LNK-P9XMRT4KQ2WA</div></td><td>2026-06-01 22:10</td><td><div class="source-tag"><span class="source-dot"></span> W.I.L.L. Market</div></td><td>$16.99</td><td><button class="btn-action">Activate</button><div class="earn-note">Earn <span>$7.64</span></div></td><td><div class="profit-pill">$7.64</div></td></tr>
+            <tr><td><strong>Car Reliability Guide</strong><div class="link-id">LNK-BV2NQPX8ZLTC</div></td><td>2026-06-01 18:44</td><td><div class="source-tag"><span class="source-dot"></span> W.I.L.L. Market</div></td><td>$11.99</td><td><button class="btn-action">Activate</button><div class="earn-note">Earn <span>$5.49</span></div></td><td><div class="profit-pill">$5.49</div></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </main>
+  </div>
+
+  <footer>
+    <div class="footer-status"><div class="status-dot"></div> All systems live</div>
+    <div class="footer-links"><a href="#">About</a><a href="#">Terms</a><a href="#">Privacy</a><a href="#">Support</a><a href="#">For Business</a></div>
+    <div>© 2026 W.I.L.L. — Where Interested Leads Link</div>
+  </footer>
+
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
